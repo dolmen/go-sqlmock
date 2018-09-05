@@ -224,7 +224,7 @@ func (e *ExpectedExec) String() string {
 
 	if e.result != nil {
 		res, _ := e.result.(*result)
-		msg += "\n  - should return Result having:"
+		msg += "\n  - returns Result having:"
 		msg += fmt.Sprintf("\n      LastInsertId: %d", res.insertID)
 		msg += fmt.Sprintf("\n      RowsAffected: %d", res.rowsAffected)
 		if res.err != nil {
@@ -233,7 +233,7 @@ func (e *ExpectedExec) String() string {
 	}
 
 	if e.err != nil {
-		msg += fmt.Sprintf("\n  - should return error: %s", e.err)
+		msg += fmt.Sprintf("\n  - returns error: %s", e.err)
 	}
 
 	return msg
